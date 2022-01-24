@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar ul{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.navbar{
+  background-color: aqua;
+
 }
 
-.App-link {
-  color: #61dafb;
+li{
+  padding: 12px;
+  margin-left: 10px;
+  font-size: 27px;
+  list-style: none;
+  text-transform: capitalize;
+
 }
 
-@keyframes App-logo-spin {
-  from {
+ul li a{
+  text-decoration: none;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.containerb img{
+  width: 100px;
+  height: 100px;
+  /* filter: invert(100%); */
+  animation-name: logo;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate-reverse;
+  animation-timing-function: ease;
+  margin-right: 25px;
+  border-radius: 50%;
+}
+
+@keyframes logo {
+  from{
     transform: rotate(0deg);
   }
-  to {
+  to{
+    
     transform: rotate(360deg);
   }
+}
+
+.containerb{
+  background-color: rgb(144, 247, 247);
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  align-items: center;
+  height: 600px;
+  width: 100% !important;
+}
+.box1,.box2,.box3{
+  width: 200px;
+  height: 200px;
+  box-shadow: 3px 3px 3px 3px gray;
+  font-size: 20px;
+  text-transform: capitalize;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: tomato;
+
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+footer h2{
+  text-transform: capitalize;
+  font-size: 30px;
+  text-align: center;
+  
+}
+
+.containerb img{
+  width: 100px;
+  height: 100px;
+  margin-left: 22px;
+}
+
+.textutil{
+  height: 1000px;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.alert{
+  z-index: 1;
+}
+
+.redmode{
+  margin-left: 50px;
 }

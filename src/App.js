@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Navbar from './components/Navbar'
+import TextUtil from './components/TextUtil'
+import './App.css'
+import Alert from './components/Alert'
+// import Foot from './components/Foot'
+export default function App() {
+  
+const data = {
+  title: "Madhvik's Tech",
+  home: "Home Page",
+  url: 'https://placekitten.com/g/64/64'
+}
+// const footerdata = "Madhvik Bhalani's React App"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// alert
+const [alert, setalert] = useState(false) //null
+const showalert=(msg,type)=>{
+  setalert({
+    msg:msg,
+    type:type
+  })
+  setTimeout(() => {
+    setalert(false) //null
+  }, 1500);
 }
 
-export default App;
+// darkmode
+const [mode, setmode] = useState('light')
+const [btn, setbtn] = useState("DarkBlue")
+const tooglemode=()=>{
+  if(mode==="light")
+  {
+    setmode("dark")
+    setbtn("LightMode")
+    document.body.style.backgroundColor="rgb(32 15 106)"
+    showalert("DarkMode Enabled","success");
+  }
+  else{
+    setmode("light")
+    setbtn("DarkBlue")
+    document.body.style.backgroundColor="white"
+    showalert("LightMode Enabled","success");
+  }
+}
+
+
+
+
+  return (
+    <div>
+            <Navbar title={data.title} home={data.home} mode= {mode} toggle={tooglemode} btn={btn} />
+            <Alert alert={alert}/>
+            <TextUtil head={"Text Analyzer"} mode={mode} showalert={showalert}/>
+            {/* <Foot foot={footerdata} date={new Date().toDateString()} mode={mode} /> */}
+
+    </div>
+  )
+  }
